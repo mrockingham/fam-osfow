@@ -13,6 +13,7 @@ router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
 
 router.get('/google/callback', passport.authenticate('google', {failureRedirect: '/' }),
 (req,res) =>{
+    console.log(res)
     res.redirect('/dashboard')
 } )
 module.exports = router
